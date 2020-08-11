@@ -1,0 +1,80 @@
+.form-header-group {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+}
+.form-header {
+  width: 100%;
+  text-align: center;
+  padding: 1rem;
+}
+.form-header h1 {
+  font-family: var(--fontTitles);
+  padding: 1rem;
+}
+.form-coordos-img {
+  margin: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.form-coordos-address {
+  font-family: var(--fontTitles);
+}
+
+span {
+  font-weight: 900;
+  font-size: 1.5rem;
+  font-family: var(--fontTitles);
+}
+.form-header img {
+  height: 5rem;
+  margin: 1rem;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.form-inputs {
+  width: 45%;
+}
+.form-name,
+.form-email,
+.form-tel {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.form-message {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+}
+select {
+  margin-top: 1rem;
+}
+.form-message-area {
+  min-height: 5rem;
+  margin-top: 1rem;
+}
+.form-btn {
+  padding: 0.2rem 1rem;
+  font-size: 1rem;
+  margin: 1rem 0 1rem 0;
+}
+@media screen and (max-width: 768px) {
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .form-inputs,
+  .form-message {
+    width: 100%;
+  }
+}
