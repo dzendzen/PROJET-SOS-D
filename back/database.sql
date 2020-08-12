@@ -49,12 +49,12 @@ DROP TABLE IF EXISTS `contact`;
 CREATE TABLE `contact` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(150) DEFAULT NULL,
+  `address` text,
   `email` text,
   `tel` text,
-  `selection` text,
-  `message` text,
+  `images_id` text,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -63,6 +63,7 @@ CREATE TABLE `contact` (
 
 LOCK TABLES `contact` WRITE;
 /*!40000 ALTER TABLE `contact` DISABLE KEYS */;
+INSERT INTO `contact` VALUES (1,'SOS Diogène','4 rue Honnegger 78100 Saint Germain-en-Laye','sosdiogene@yahoo.com','06.13.15.20.93',NULL);
 /*!40000 ALTER TABLE `contact` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -78,7 +79,7 @@ CREATE TABLE `gallery` (
   `src` text,
   `name` varchar(150) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -87,6 +88,7 @@ CREATE TABLE `gallery` (
 
 LOCK TABLES `gallery` WRITE;
 /*!40000 ALTER TABLE `gallery` DISABLE KEYS */;
+INSERT INTO `gallery` VALUES (1,'AVANT-chambre.jpg','chambre avant nettoyage'),(2,'AVANT-chambre2.jpg','chambre avant nettoyage'),(3,'APRES-chambre1.jpg','chambre après débarras'),(4,'APRES-chambre2.jpg','chambre aprsè nettoyage'),(5,'APRES-chambre3.jpg','chambre après nettoyage'),(6,'AVANT-cour1.jpg','cour avant débarras'),(7,'AVANT-cour2.jpg','cour avant débarras'),(8,'AVANT-cour3.jpg','cour avant débarras'),(9,'APRES-cour.jpg','cour après débarras'),(10,'APRES-cour2.jpg','cour après débarras'),(11,'APRES-cour3.jpg','cour après débarras'),(12,'AVANT-salleDeBain.jpg','salle de bain avant nettoyage'),(13,'APRES-salleDeBain.jpg','salle de bain après nettoyage'),(14,'APRES-salleDeBain2.jpg','salle de bain après nettoyage'),(15,'APRES-cuisine.jpg','cuisine après nettoyage'),(16,'APRES-sejour.jpg','séjour après nettoyage'),(17,'article-sosdiogene.jpg','article de presse');
 /*!40000 ALTER TABLE `gallery` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -102,7 +104,7 @@ CREATE TABLE `images` (
   `src` text,
   `name` varchar(150) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -111,6 +113,7 @@ CREATE TABLE `images` (
 
 LOCK TABLES `images` WRITE;
 /*!40000 ALTER TABLE `images` DISABLE KEYS */;
+INSERT INTO `images` VALUES (1,'adapei-ATY78.png','logo ATY78'),(2,'ccas.png','logo ccas'),(3,'conseil_dptal_yvelines.png','logo conseil départemental des yvelines'),(4,'Label-Ecodrop.png','logo ecodrop'),(5,'logo-cesu.png','logo cesu'),(6,'Logo-Matmut.png','logo matmut'),(7,'needhelp.png','logo needhelp'),(8,'SOS.PNG','logo sos diogène'),(9,'travaux.png','logo travaux.com'),(10,'udaf.png','logo udaf');
 /*!40000 ALTER TABLE `images` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -221,4 +224,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-08-11  8:18:47
+-- Dump completed on 2020-08-12 17:14:55
