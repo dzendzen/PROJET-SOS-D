@@ -18,7 +18,7 @@ router.get("/all", (req, res) => {
 });
 
 router.get("/", (req, res) => {
-  const sql = "select c.id,c.name,c.address, c.tel, c.email FROM contact c";
+  const sql = "SELECT c.id,c.name,c.address, c.tel, c.email FROM contact c";
   connection.query(sql, (error, results, fields) => {
     if (error) {
       res.status(501).send("impossible de charger la page" + error);
