@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-
 import "./Contact.css";
+
+const SERVER = process.env.REACT_APP_SERVER_ADDRESS;
 
 export default class Contact extends Component {
   constructor(props) {
@@ -23,8 +24,26 @@ export default class Contact extends Component {
       emailValid: false,
       subjectValid: false,
       messageValid: false,
+      phone: "",
+      contactData: [{ name: "", address: "", tel: "", email: "" }],
     };
   }
+  // récupération des données de la table contact
+  componentDidMount() {
+    this.getContact();
+  }
+
+  getContact = () => {
+    fetch(SERVER + "/api/contact", {
+      method: "GET",
+    })
+      .then((response) => console.log(response.json()))
+      .then((response) => response.json())
+      .then((data) => {
+        this.setState({ contactData: data });
+      });
+  };
+
   handleContactSubmit = (event) => {
     event.preventDefault();
     console.log(this.state);
@@ -60,13 +79,13 @@ export default class Contact extends Component {
               <img src="/images/SOS.PNG" alt="" role="presentation" />
 
               <p className="form-coordos-address">
-                <span>SOS DIOGÈNE</span>
+                <span>{this.state.contactData[0].name}</span>
                 <br />
-                4 rue Honnegger
+                {this.state.contactData[0].address}
                 <br />
-                78100 Saint-Germain-en-Laye
+                {this.state.contactData[0].tel}
                 <br />
-                06.13.15.20.93
+                {this.state.contactData[0].email}
               </p>
             </div>
           </div>
@@ -131,7 +150,6 @@ export default class Contact extends Component {
               value={subject}
               onChange={this.handleChangeContact}
             >
-              <span>{this.state.formErrors.email}</span>
               <option
                 value=""
                 aria-label="cliquez pourchoisir un motif ci-dessous"
@@ -157,6 +175,7 @@ export default class Contact extends Component {
                 Autre demande
               </option>
             </select>
+            <span>{this.state.formErrors.email}</span>
 
             <textarea
               className="form-message-area"
