@@ -37,9 +37,9 @@ export default class Contact extends Component {
     fetch(SERVER + "/api/contact", {
       method: "GET",
     })
-      .then((response) => console.log(response.json()))
       .then((response) => response.json())
       .then((data) => {
+        console.log(data);
         this.setState({ contactData: data });
       });
   };
