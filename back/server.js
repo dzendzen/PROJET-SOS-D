@@ -9,7 +9,7 @@ const SERVER_ADDRESS = process.env.REACT_APP_SERVER_ADDRESS;
 
 app.use(parser.json());
 app.use(parser.urlencoded({ extended: true }));
-app.use(cors());
+app.use(cors({ origin: SERVER_ADDRESS }));
 
 app.use("/api", api);
 
